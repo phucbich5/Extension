@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "Element Custom",
+    "description": "Element Custom",
+    "version": "1.0",
+    "permissions": ["storage", "tabs"],
+    "options_ui": {
+    "page": "option/options.html",
+    "open_in_tab": true
+    },
+    "content_scripts": [{
+        "matches": [
+            "<all_urls>"
+        ],
+        "js": ["public/js/jquery.js" , "public/js/content.js"]
+    }],
+    "browser_action": {
+        "default_title": "Element Custom",
+        "default_popup": "popup.html",
+        "default_icon": "public/image/icon.png"
+    }
+}

@@ -1,0 +1,22 @@
+header{
+  color:  #00FF00;
+}
+header>button{
+  position: absolute; border-radius: 30%; right: 10px;top: 3px;
+}
+body{
+  background: #1E90FF;
+}
+.container{
+  background: #00FFFF;
+  margin: 10px;
+  width: 450px;
+  border-radius: 5px;
+  padding-bottom: 2px;
+}
+footer>div{
+  border-radius: 2px;
+  color: #FF00FF;
+  background: #ADD8E6;
+  margin: 10px;
+}

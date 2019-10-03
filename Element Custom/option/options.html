@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Cài Đặt</title>
+	<link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/optionStyles.css">
+	<script src="../public/js/jquery.js"></script>
+	<script src="js/options.js"></script>
+</head>
+<body>
+	<header>
+		<h1 align="center">Thiết Lập</h1>
+	</header>
+	<div id="status" style="position: absolute; font-size: 36px; top: 40%; left: 40%;"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4" style="border: 2px solid #ccc; border-radius: 10px; padding: 20px;margin-bottom: 100px;">
+				<h1 align="center"> Setting</h1>
+
+				<div align="left">Border Color</div>
+				<select id="border-color" class="form-control form-control-lg">
+					<option value="">Default</option>
+				</select>
+
+				<div align="left">Background Color</div>
+				<select id="color" class="form-control form-control-lg">
+					<option value="">Default</option>
+				</select>
+
+				<div align="left">Text Color</div>
+				<select id="text-color" class="form-control form-control-lg">
+					<option value="">Default</option>
+				</select>
+				<button id="save" type="button" class="btn btn-primary btn-lg btn-block" style="margin-top: 10px;">Save</button>
+			</div>
+			<div class="col-md-4" id="list-urls" style="border: 2px solid #ccc; border-radius: 10px; padding: 20px;margin-bottom: 100px;">
+				<h1 align="center"> List Urls</h1>
+			</div>
+			<div class="col-md-4" id="list-element" style="border: 2px solid #ccc; border-radius: 10px; padding: 20px;margin-bottom: 100px;">
+				<h1 align="center"> List Element</h1>
+			</div>
+		</div>
+	</div>
+	<div class="loader" style="margin-top: 50px;"><b style="position: relative; top: 35%; left: 11px;">Xin Chờ!</b></div>
+</body>
+</html>

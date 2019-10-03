@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="public/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="public/css/styles.css">
+  <script src="public/js/jquery.js"></script>
+</head>
+<body>
+  <header>
+    <button id="go-to-options" class="btn btn-outline-primary">⚙</button>
+    <h3 align="center">Element Custom</h3>
+  </header>
+
+  <div class="container">
+    <h3>Urls</h3>
+    <div class="input-group mb-3">
+      <input id="production-urls" type="text" class="form-control" placeholder="Link" aria-label="Link" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button id="saveUrl" class="btn btn-outline-success" type="button">Save</button>
+      </div>
+    </div>
+
+    <h3>Element</h3>
+    <div class="input-group mb-3">
+      <input id="elements" type="text" class="form-control" placeholder="Element" aria-label="Element" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <select id="select-type" class="browser-default">
+          <option value=".">CLASS</option>
+          <option value="#">ID</option>
+          <option value="">TAG</option>
+        </select>
+        <button id="save" class="btn btn-outline-success" type="button">Add</button>
+      </div>
+    </div>
+    <div class="custom-control custom-checkbox">
+      <input type="checkbox" id="cbx-auto-delete" class="custom-control-input">
+      <label class="custom-control-label" for="cbx-auto-delete">Tự động xóa.</label>
+    </div>
+    <button type="button" id="delete-list-element" class="btn btn-danger btn-sm btn-block">Xóa</button>
+  </div>
+  
+  <footer>
+    <div align="center"><b>Hoàng Văn Huy</b></div>
+  </footer>
+  <script src="public/js/popup.js"></script>
+</body>
+</html>
