@@ -1,0 +1,11 @@
+header h3{
+	float: left; margin-left: 35%;
+}
+header #go-to-options{
+	float: right;
+}
+.container{
+  padding-bottom: 0.5em;
+  width: 450px;
+  border-radius: 5px;
+}
