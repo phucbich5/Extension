@@ -1,13 +1,9 @@
 {
     "manifest_version": 2,
-    "name": "Cookie",
-    "description": "Get Cookie",
+    "name": "Auto Logged",
+    "description": "Tự động đăng nhập",
     "version": "1.0",
-    "options_ui": {
-        "page": "option/options.html",
-        "open_in_tab": true
-    },
-    "permissions": ["cookies", "tabs", "*://*/*", "storage"],
+    "permissions": ["tabs", "*://*/*", "storage"],
     "content_scripts": [{
         "matches": [
             "<all_urls>"
@@ -15,7 +11,7 @@
         "js": ["public/js/jquery.js" , "public/js/content.js"]
     }],
     "browser_action": {
-        "default_title": "Get Cookie",
+        "default_title": "Auto Logged",
         "default_popup": "popup.html",
         "default_icon": "public/image/icon.png"
     }

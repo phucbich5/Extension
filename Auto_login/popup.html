@@ -8,8 +8,7 @@
 </head>
 <body>
   <header>
-    <h3>Get Cookie</h3>
-    <button id="go-to-options" class="btn">⚙</button>
+    <h3>Auto Logged</h3>
   </header>
   <div class="container">
     <div class="input-group mb-3 input-group-sm">
@@ -18,7 +17,14 @@
       </div>
     <input id='CurrentCookieUrl' type="text" class="form-control">
     </div>
-    <textarea id="cookieresult" class = "form-control" rows = "10" placeholder = "Không có gì để hiển thị!"></textarea>
+    <label for="username">Username:</label>
+    <input type="text" id="username" value="17211TT2685" class="form-control">
+    <label for="password">Password:</label>
+    <input type="text" id="password" value="huycntt6@gmail.com" class="form-control">
+    <div class="custom-control custom-checkbox">
+      <input type="checkbox" id="cbx-auto-delete" class="custom-control-input">
+      <label class="custom-control-label" for="cbx-auto-delete">Tự động đăng nhập.</label>
+    </div>
   </div>
 <script src="public/js/popup.js"></script>
 </body>

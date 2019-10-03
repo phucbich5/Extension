@@ -15,17 +15,7 @@ function loadCurrentCookie() {
 		var currentUrl=tab.url;
 		//add địa chỉ url đã lọc
 		$('#CurrentCookieUrl').val(extractHostname(currentUrl));
-		// lấy cookie đã lưu tùy theo url hiện tại
-        chrome.cookies.getAll({ "url": currentUrl }, function (cookie) {
-            var result = "";
-            for (var i = 0; i < cookie.length; i++) {
-                result += cookie[i].name + "=" + cookie[i].value + ";\n";
-                if (cookie[i].name == "c_user") {
-                    currentUid = cookie[i].value;
-                }
-            }
-            $('#cookieresult').val(result);
-        });
+		
     });
 }
 function extractHostname(url) {
