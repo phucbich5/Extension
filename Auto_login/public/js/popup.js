@@ -24,18 +24,67 @@ $(document).ready(function () {
 			});
 		}
 	});
-	chrome.storage.sync.get(["list_user", "list"], function(result) {
-		alert(result['list']['linkURL']);
+	// chrome.storage.sync.get(["list"], function(result) {
+	// 	alert(result['list']['linkURL']);
+	// });
+	get_users_page();
+	function get_users_page() {
+		$("#selectuser").children().remove();
+		chrome.storage.sync.get(["list"], function(result) {
+		var list_url = result['list']['linkURL'];
+		var list_user = result['list']['username'] || '';
+		var url_page = $("#CurrentCookieUrl").val();
+		if (list_user != '') {
+			for (var i = 0; i < list_user.length; i++) {
+				if (list_url[i] == url_page) {
+					$("#selectuser").append('<option>'+list_user[i]+'</option>');
+				}
+			}
+		}
 	});
+	}
 
 	$("select#selectuser").change(function(){
-      var selected= $(this).children("option:selected").val();
+      var selected = $(this).children("option:selected").val();
+      var url_page = $("#CurrentCookieUrl").val();
       // alert("You have selected - " + selected);
+      chrome.storage.sync.get(["list"], function(result) {
+			var list_url = result['list']['linkURL'] || '';
+			var list_user = result['list']['username'] || '';
+			var list_pass = result['list']['password'] || '';
+			 if (list_url != '') {
+			 	for (var i = 0; i < list_url.length; i++) {
+			 		if (url_page == list_url[i]) {
+				 		if (selected == list_user[i]) {
+							$('#inputuser').val(list_user[i]);
+							$('#inputpassword').val(list_pass[i]);
+						}
+			 		}
+					
+					
+				}
+			
+			}
+			
+		});
     });
     $('#save').click(function () {
     	var get_input_user = $("#inputuser").val();
     	var get_input_pass = $("#inputpassword").val();
-    	alert(get_input_pass + get_input_user);
+    	var get_input_url = $("#CurrentCookieUrl").val();
+    	chrome.storage.sync.get(["list"], function(result) {
+    		var get_users = result['list'];
+    		get_users['linkURL'].push(get_input_url);
+    		get_users['username'].push(get_input_user);
+    		get_users['password'].push(get_input_pass);
+    		chrome.storage.sync.set({
+		    "list": get_users
+			}, function() {
+				console.log("save!");
+				get_users_page();
+			});
+			console.log(get_users);
+		});
     });
 }); //end document
 
