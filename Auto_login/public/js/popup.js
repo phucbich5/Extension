@@ -10,17 +10,12 @@ $(document).ready(function () {
 	});
 	chrome.storage.sync.get(["active"], function(active) {
 		if (!active['active']) {
-			user = {"linkID" : [],
+			user = {"linkURL" : [],
 					"username": [],
 					"password": []};
-			link = {
-				"linkID": [],
-				"url": []
-			};
 
 			chrome.storage.sync.set({
-		    "list_user": user,
-		    "list_link": link
+		    "list": user
 			}, function() {
 				console.log("active finish!");
 			});
@@ -29,10 +24,20 @@ $(document).ready(function () {
 			});
 		}
 	});
-	chrome.storage.sync.get(["list_user", "list_link"], function(result) {
-		alert(result['list_link']['linkID']);
+	chrome.storage.sync.get(["list_user", "list"], function(result) {
+		alert(result['list']['linkURL']);
 	});
-});
+
+	$("select#selectuser").change(function(){
+      var selected= $(this).children("option:selected").val();
+      // alert("You have selected - " + selected);
+    });
+    $('#save').click(function () {
+    	var get_input_user = $("#inputuser").val();
+    	var get_input_pass = $("#inputpassword").val();
+    	alert(get_input_pass + get_input_user);
+    });
+}); //end document
 
 function loadCurrentCookie() {
     chrome.tabs.getSelected(null, function (tab) { //lấy cửa sổ làm việc hiện tại

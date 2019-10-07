@@ -1,56 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="public/css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="public/css/styles.css">
-  <script src="public/js/jquery.js"></script>
-</head>
-<body>
-  <header>
-    <h3>Auto Logged</h3>
-  </header>
-  <div class="container">
-    <div class="input-group mb-3 input-group-sm">
-      <div class="input-group-prepend">
-        <span class="input-group-text">Địa Chỉ</span>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="public/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="public/css/styles.css">
+    <script src="public/js/jquery.js"></script>
+  </head>
+  <body>
+    <header>
+      <h3>Auto Logged</h3>
+    </header>
+    <div class="container">
+      <div class="input-group mb-3 input-group-sm">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Địa Chỉ</span>
+        </div>
+        <input id='CurrentCookieUrl' type="text" class="form-control">
       </div>
-    <input id='CurrentCookieUrl' type="text" class="form-control">
-    </div>
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="username">Username</span>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="username">Username</span>
+        </div>
+        <input type="text" id="inputuser" class="form-control" aria-label="Default" value="17211TT2685" aria-describedby="inputGroup-sizing-default">
       </div>
-      <input type="text" class="form-control" aria-label="Default" value="17211TT2685" aria-describedby="inputGroup-sizing-default">
-    </div>
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="password">Password&nbsp;</span>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="password">Password&nbsp;</span>
+        </div>
+        <input type="text" id="inputpassword" class="form-control" aria-label="Default" value="huycntt6@gmail.com" aria-describedby="inputGroup-sizing-default">
       </div>
-      <input type="text" class="form-control" aria-label="Default" value="huycntt6@gmail.com" aria-describedby="inputGroup-sizing-default">
+      
+      <form>
+        <div class="form-group">
+          <label for="selectuser">List User</label>
+          <select multiple class="form-control" id="selectuser">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </form>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" id="cbx-auto-delete" class="custom-control-input">
+        <label class="custom-control-label" for="cbx-auto-delete">Tự động đăng nhập.
+        </label>
+      </div>
+      <button id="save" class="btn btn-outline-success" type="button">Save</button>
     </div>
-    
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div>
-
-
-    <div class="custom-control custom-checkbox">
-      <input type="checkbox" id="cbx-auto-delete" class="custom-control-input">
-      <label class="custom-control-label" for="cbx-auto-delete">Tự động đăng nhập.
-    </label>
-    </div>
-    <button id="save" class="btn btn-outline-success" type="button">Save</button>
-  </div>
-<script src="public/js/popup.js"></script>
-<script src="public/js/poper.js"></script>
-<script src="public/js/bootstrap.min.js"></script>
-</body>
+    <script src="public/js/popup.js"></script>
+    <script src="public/js/poper.js"></script>
+    <script src="public/js/bootstrap.min.js"></script>
+  </body>
 </html>
