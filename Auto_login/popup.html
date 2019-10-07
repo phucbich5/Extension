@@ -17,15 +17,40 @@
       </div>
     <input id='CurrentCookieUrl' type="text" class="form-control">
     </div>
-    <label for="username">Username:</label>
-    <input type="text" id="username" value="17211TT2685" class="form-control">
-    <label for="password">Password:</label>
-    <input type="text" id="password" value="huycntt6@gmail.com" class="form-control">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="username">Username</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Default" value="17211TT2685" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="password">Password&nbsp;</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Default" value="huycntt6@gmail.com" aria-describedby="inputGroup-sizing-default">
+    </div>
+    
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+
+
     <div class="custom-control custom-checkbox">
       <input type="checkbox" id="cbx-auto-delete" class="custom-control-input">
-      <label class="custom-control-label" for="cbx-auto-delete">Tự động đăng nhập.</label>
+      <label class="custom-control-label" for="cbx-auto-delete">Tự động đăng nhập.
+    </label>
     </div>
+    <button id="save" class="btn btn-outline-success" type="button">Save</button>
   </div>
 <script src="public/js/popup.js"></script>
+<script src="public/js/poper.js"></script>
+<script src="public/js/bootstrap.min.js"></script>
 </body>
 </html>

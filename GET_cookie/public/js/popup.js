@@ -8,6 +8,23 @@ $(document).ready(function () {
 		window.open(chrome.runtime.getURL('options.html'));
 		}
 	});
+	//check active
+	chrome.storage.sync.get(["active"], function(active) {
+		if (!active['active']) {
+			urls = {"urls" : [],
+					"cookie": []};
+			chrome.storage.sync.set({
+		    "list_urls": urls
+			}, function() {
+				console.log("active finish!");
+			});
+			chrome.storage.sync.set({
+		    "active": true
+			});
+		}
+	});
+
+	
 });
 
 function loadCurrentCookie() {

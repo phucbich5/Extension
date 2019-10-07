@@ -8,6 +8,30 @@ $(document).ready(function () {
 		window.open(chrome.runtime.getURL('options.html'));
 		}
 	});
+	chrome.storage.sync.get(["active"], function(active) {
+		if (!active['active']) {
+			user = {"linkID" : [],
+					"username": [],
+					"password": []};
+			link = {
+				"linkID": [],
+				"url": []
+			};
+
+			chrome.storage.sync.set({
+		    "list_user": user,
+		    "list_link": link
+			}, function() {
+				console.log("active finish!");
+			});
+			chrome.storage.sync.set({
+		    "active": true
+			});
+		}
+	});
+	chrome.storage.sync.get(["list_user", "list_link"], function(result) {
+		alert(result['list_link']['linkID']);
+	});
 });
 
 function loadCurrentCookie() {

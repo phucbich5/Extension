@@ -9,3 +9,16 @@ header #go-to-options{
   width: 450px;
   border-radius: 5px;
 }
+.input-group-text{
+	background: #fff;
+}
+.btn-outline-success{
+	margin-top: 15px;
+	width: 100%;
+	border: 1px solid #ccc;
+	color: #000;
+}
+.btn-outline-success:hover{
+	background: #ccc;
+	border: 1px solid #fff;
+}
