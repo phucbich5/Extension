@@ -14,7 +14,7 @@ header #go-to-options{
 }
 #save{
 	margin-top: 15px;
-	width: 100%;
+	width: 32.6%;
 	border: 1px solid #ccc;
 	color: #000;
 }
@@ -23,8 +23,14 @@ header #go-to-options{
 	border: 1px solid #fff;
 }
 #delete{
-	margin-top: 10px;
-	width: 100%;
+	margin-top: 15px;
+	width: 32.6%;
+	border: 1px solid #ccc;
+	color: #000;
+}
+#login{
+	margin-top: 15px;
+	width: 32.6%;
 	border: 1px solid #ccc;
 	color: #000;
 }

@@ -106,7 +106,49 @@ $(document).ready(function () {
     		}
     	});
     });
-}); //end document
+
+    $("#login").click(function () {
+    	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+			var activeTab = tabs[0];
+		    chrome.tabs.sendMessage(activeTab.id, {"message": "start"});
+		});
+    });
+
+    chrome.storage.sync.get(["auto-login"], function(checkbox) {
+		if (checkbox["auto-login"]) {
+			$('#cbx-auto-login').attr('checked', true);
+			$('#login').attr('disabled', true);
+		    chrome.storage.sync.set({
+			    "auto-login": true
+			});
+		}
+		else{
+			$('#cbx-auto-login').attr('checked', false);
+			$('#login').attr('disabled', false);
+		    chrome.storage.sync.set({
+			    "auto-login": false
+			});
+		}
+	});
+	
+    $('#cbx-auto-login').click(function() {
+	    if ($(this).is(':checked')) {
+	    	$('#login').attr('disabled', true);
+	    	chrome.storage.sync.set({
+			    "auto-login": true
+				}, function() {
+					console.log("auto login is on");
+			});
+	    } else{
+	    	$('#login').attr('disabled', false);
+	    	chrome.storage.sync.set({
+			    "auto-login": false
+				}, function() {
+					console.log("auto login is off");
+			});
+	    }
+  	});
+}); //end document ready
 
 function loadCurrentCookie() {
     chrome.tabs.getSelected(null, function (tab) { //lấy cửa sổ làm việc hiện tại
