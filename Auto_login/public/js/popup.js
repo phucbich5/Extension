@@ -31,22 +31,26 @@ $(document).ready(function () {
 	function get_users_page() {
 		$("#selectuser").children().remove();
 		chrome.storage.sync.get(["list"], function(result) {
-		var list_url = result['list']['linkURL'];
-		var list_user = result['list']['username'] || '';
-		var url_page = $("#CurrentCookieUrl").val();
-		if (list_user != '') {
-			for (var i = 0; i < list_user.length; i++) {
-				if (list_url[i] == url_page) {
-					$("#selectuser").append('<option>'+list_user[i]+'</option>');
+			var list = result['list'] || '';
+			if (list != '') {
+				var list_url = list['linkURL'] || '';
+				var list_user = list['username'] || '';
+				var url_page = $("#CurrentCookieUrl").val();
+				if (list_user != '') {
+					for (var i = 0; i < list_user.length; i++) {
+						if (list_url[i] == url_page) {
+							$("#selectuser").append('<option>'+list_user[i]+'</option>');
+						}
+					}
 				}
 			}
-		}
-	});
+		});
 	}
 
 	$("select#selectuser").change(function(){
       var selected = $(this).children("option:selected").val();
       var url_page = $("#CurrentCookieUrl").val();
+      $('#delete').removeAttr("disabled");
       // alert("You have selected - " + selected);
       chrome.storage.sync.get(["list"], function(result) {
 			var list_url = result['list']['linkURL'] || '';
@@ -73,18 +77,34 @@ $(document).ready(function () {
     	var get_input_pass = $("#inputpassword").val();
     	var get_input_url = $("#CurrentCookieUrl").val();
     	chrome.storage.sync.get(["list"], function(result) {
-    		var get_users = result['list'];
-    		get_users['linkURL'].push(get_input_url);
-    		get_users['username'].push(get_input_user);
-    		get_users['password'].push(get_input_pass);
-    		chrome.storage.sync.set({
-		    "list": get_users
-			}, function() {
-				console.log("save!");
-				get_users_page();
-			});
-			console.log(get_users);
-		});
+    		var get_list = result['list'];
+    		var check = true;
+    		var list_url = get_list['linkURL'] || '';
+    		var list_user = get_list['username']|| '';
+    		var list_pass = get_list['password'] || '';
+
+    		for (var i = 0; i < list_user.length; i++) {
+    			if (list_url[i] == get_input_url && list_user[i] == get_input_user) {
+    				check = false;
+    				console.log(list_pass[i]);
+    				console.log(get_input_pass);
+    				if (list_pass[i] != get_input_pass) {
+    					alert("Chức năng đổi pass chưa ra mắt!"+"\nPass cũ: "+ list_pass[i] +"\nPass mới: " + get_input_pass + '\nTại vị trí: ' + i);
+    				}
+    			}
+    		}
+    		if (check && get_input_user != '') {
+    			get_list['linkURL'].push(get_input_url);
+    			get_list['username'].push(get_input_user);
+    			get_list['password'].push(get_input_pass);
+    			chrome.storage.sync.set({
+			    "list": get_list
+				}, function() {
+					console.log("save!");
+					get_users_page();
+				});
+    		}
+    	});
     });
 }); //end document
 

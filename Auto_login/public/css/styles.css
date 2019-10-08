@@ -12,13 +12,19 @@ header #go-to-options{
 .input-group-text{
 	background: #fff;
 }
-.btn-outline-success{
+#save{
 	margin-top: 15px;
 	width: 100%;
 	border: 1px solid #ccc;
 	color: #000;
 }
-.btn-outline-success:hover{
-	background: #ccc;
+
+#save:hover{
 	border: 1px solid #fff;
+}
+#delete{
+	margin-top: 10px;
+	width: 100%;
+	border: 1px solid #ccc;
+	color: #000;
 }
