@@ -8,6 +8,10 @@ $(document).ready(function () {
 		window.open(chrome.runtime.getURL('options.html'));
 		}
 	});
+	chrome.storage.sync.get(["userselected", "passselected"], function(active) {
+		$('#inputuser').val(active["userselected"]);
+		$('#inputpassword').val(active["passselected"]);
+	});
 	chrome.storage.sync.get(["active"], function(active) {
 		if (!active['active']) {
 			user = {"linkURL" : [],
@@ -62,6 +66,12 @@ $(document).ready(function () {
 				 		if (selected == list_user[i]) {
 							$('#inputuser').val(list_user[i]);
 							$('#inputpassword').val(list_pass[i]);
+							chrome.storage.sync.set({
+						    "userselected": list_user[i],
+						    "passselected": list_pass[i]
+							}, function() {
+								console.log("save!");
+							});
 						}
 			 		}
 					
@@ -130,7 +140,7 @@ $(document).ready(function () {
 			});
 		}
 	});
-	
+
     $('#cbx-auto-login').click(function() {
 	    if ($(this).is(':checked')) {
 	    	$('#login').attr('disabled', true);

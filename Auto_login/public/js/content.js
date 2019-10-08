@@ -1,4 +1,9 @@
 $(document).ready(function() {
+	chrome.storage.sync.get(["auto-login"], function(checkbox) {
+		if (checkbox["auto-login"]) {
+			login();
+		}
+	});
 	chrome.runtime.onMessage.addListener(
         function(request, sender, sendResponse) {
             if( request.message === "start" ) {
@@ -8,7 +13,10 @@ $(document).ready(function() {
     );
 });
 function login() {
-	$('input[type=text]').val("17211TT2685");
-	$('input[type=password]').val("Huycntt6@gmail.com");
-	$('button[type=submit]').click();
+	chrome.storage.sync.get(["userselected", "passselected"], function(result) {
+		$('input[type=text]').val(result["userselected"]);
+		$('input[type=password]').val(result["passselected"]);
+		$('button[type=submit]').click();
+	});
+	
 }
