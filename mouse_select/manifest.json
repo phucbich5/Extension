@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "Select Elements",
+    "description": "Select and Delete Elements",
+    "version": "1.0",
+    "permissions": ["tabs", "*://*/*", "storage"],
+    "content_scripts": [{
+        "matches": [
+            "<all_urls>"
+        ],
+        "js": ["public/js/jquery.js" , "public/js/content.js"]
+    }],
+    "browser_action": {
+        "default_title": "Scope",
+        "default_popup": "popup.html",
+        "default_icon": "public/image/icon.png"
+    }
+}
