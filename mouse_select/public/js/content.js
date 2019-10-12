@@ -11,7 +11,7 @@ $(document).ready(function () {
 		var ahihi = result['start'] || '';
 		if (ahihi != '' && ahihi == true) {
 			$( document ).mouseover(function(event) {
-				$(event.target).css("border", "3px double red");
+				$(event.target).css("border", "1.5px dashed red");
 				element = event.target;
 
 			});
