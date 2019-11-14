@@ -66,24 +66,6 @@ function click_right_lock() {
 	});
 }
 function create_display() {
-	$('html').append("<div id='display-element-select' style='display: block;font-size: 14px;padding: 2px;z-index:999999;"
-		+"background:#ccc;position: fixed; bottom:5px; right:0; border-radius: 10px;'>"
-		+"<span style='margin-left: 40%;'>Xin Chào</span><button id='btnExit' style='position: absolute;"
-		+"right:0; border: none; background: unset; color: red;'>X</button></div>");
-	$('#display-element-select').css("width", "300px");
-	$('#display-element-select').css("height", "200px");
-	$('#display-element-select').append('<div id="content-element-select"'
-		+'style="width: 100%;font-size: 12px; height: 100%;"></div>');
-	$('#content-element-select').append('<select multiple class="form-control" style="width:100%;background: #fff;border: none; height: 50%;" id="selectelementv102"></select>');
-	$('#content-element-select').append('<div style="width:100%;background: #fff;'
-		+'margin-top:1px;height: 30%;" id="hoverelementv102"></div>');
-	$('#content-element-select').append('<div style="width: 100%;margin:1px;'
-		+'height: 21px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;">'
-		+ '<input type="button" id="btnSave" disabled value="Save" style="width: 49.5%;visibility: hidden;'
-		+'font-size: 14px;border-bottom-left-radius: 10px;float:left;height: 100%;background: #fff; border: none;">'
-		+ '<input type="button" id="btnDelete" disabled value="Delete" style="width: 49.5%;'
-		+'visibility: hidden;font-size: 14px;border-bottom-right-radius: 10px;height: 100%;float:right;background: #fff; border: none;">'
-		+'</div>');
 
     $( "#selectelementv102" ).change(function() {
 		$('#btnSave').removeAttr('disabled');
